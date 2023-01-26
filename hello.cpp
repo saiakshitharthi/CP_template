@@ -3,7 +3,7 @@ using namespace std;
 #define ll long long
 #define pll pair<ll, ll>
 #define rep(i, n) for (ll i = 0; i < n; i++)
-#define mod 40000000000000000
+#define mod 1000000007
 #define INF 10000000000000000
 #define ff first
 #define ss second
@@ -547,39 +547,7 @@ void bit_update(vll &arr, ll index, ll value){
 }
 void solve()
 {
-    ll n;
-    cin >> n;
-    ll x;cin >> x;
-    vll arr;
-
-    vll visited(1<<n,0);
-    if(x<visited.size()){
-        visited[x] = 1;
-    }
-    for(ll i = 1;i<(1<<n);i++){
-        if(visited[i]){
-            continue;
-        }
-        else{
-            arr.push_back(i);
-            if((x^i)<visited.size()){
-
-                visited[x^i] = 1;
-            }
-        }
-    }
-    // printvect(arr);cout<<endl;
-    vll brr = arr;
-    for(ll i = 1;i<arr.size();i++){
-        brr[i] = arr[i]^arr[i-1];
-    }
-    cout<<brr.size()<<endl;
-    for(auto x: brr){
-        cout<<x<<" ";
-    }
-    cout<<endl;
     
-
 }
 
 int main()
